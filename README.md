@@ -1,6 +1,6 @@
 # DApp: Token Vesting
 
-Welcome to the Organization Token Management DApp! This DApp is designed to allow organizations to register themselves and set up vesting schedules for their users. The smart contract powering this DApp is deployed on the Avalanche Fuji C testnet.
+Welcome to the Organization Token Management DApp! This DApp is designed to allow organizations to register themselves and set up vesting schedules for their users.
 
 ## Features
 
