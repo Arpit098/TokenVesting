@@ -38,9 +38,11 @@ struct Stakeholder{
 
 }
     function lockTokens(uint256 _amount) external {
-    require(organizations[msg.sender].orgAddress != address(0), "Organization not registered");
-    require(organizations[msg.sender].token.approve(address(this),_amount),"Amount not approved");
-    organizations[msg.sender].token.transferFrom(msg.sender, address(this), _amount*10**18);
+        require(organizations[msg.sender].orgAddress != address(0), "Organization not registered");
+
+        uint256 allowance = organizations[msg.sender].token.allowance(msg.sender, address(this));
+        require(allowance >= _amount, "Amount not approved or insufficient allowance");
+        organizations[msg.sender].token.transferFrom(msg.sender, address(this), _amount);
     
     }
 
